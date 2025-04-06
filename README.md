@@ -14,7 +14,7 @@ PDM-cli provides a streamlined workflow for statistical shape modeling:
 ## Usage
 ### Build PDM
 ```bash
-scala-cli run BuildPDM.scala -- /path/to/your/training/data
+scala-cli run build.scala -- /path/to/your/training/data
 ```
 The tool will:
 - Load point clouds from the specified directory
@@ -30,10 +30,10 @@ Additional options:
 ### Fit PDM
 ```bash
 # Posterior-based fitting (for indexed point clouds)
-scala-cli run PDMFittingTool.scala -- posterior --pdm models/your_pdm.h5.json --input /path/to/target/data
+scala-cli run fit.scala -- posterior --pdm models/your_pdm.h5.json --input /path/to/target/data
 
 # ICP-based fitting
-scala-cli run PDMFittingTool.scala -- icp --pdm models/your_pdm.h5.json --input /path/to/target/data
+scala-cli run fit.scala -- icp --pdm models/your_pdm.h5.json --input /path/to/target/data
 ```
 The tool will:
 - Load the PDM from the specified file
@@ -46,6 +46,15 @@ Additional options:
 - `--output <dir>` - Custom output directory
 - `--iterations <number>` - Number of ICP iterations (default: 20)
 - `--visualize` - Enable UI visualization during fitting
+
+
+### Visualize PDM
+```bash
+scala-cli run visualize.scala -- /path/to/your/pdm.h5.json
+```
+The tool will:
+- Load the PDM from the specified file
+- Visualize the mean shape and modes of variation
 
 
 
