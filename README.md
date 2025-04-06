@@ -22,9 +22,7 @@ The tool will:
 - Build a statistical model using PCA
 - Save the model to the models directory
 
-Additional options:
-- `--output <dir>` - Custom output directory
-- `--visualize` - Enable UI visualization during model building
+
 
 
 ### Fit PDM
