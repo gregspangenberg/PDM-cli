@@ -1,0 +1,23 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!*.md
+!*.py
+!*.scala
+!*.java
+!*.sbt
+!*.sh
+!LICENSE
+!.github/
+
+# ...even if they are in subdirectories
+!*/
+
+# Now ignore all directories except models
+*/
+
+# But keep the models directory and its contents
+!models/
+!models/**
