@@ -29,10 +29,10 @@ Additional options:
 
 ### Fit PDM
 ```bash
-# Posterior-based fitting (for indexed point clouds)
+# Posterior-based fitting (for indexed point clouds that are algined and have correspondences)
 scala-cli run fit.scala -- posterior --pdm models/your_pdm.h5.json --input /path/to/target/data
 
-# ICP-based fitting
+# ICP-based fitting (for point clouds that are aligned but do not have correspondences)
 scala-cli run fit.scala -- icp --pdm models/your_pdm.h5.json --input /path/to/target/data
 ```
 The tool will:
@@ -46,6 +46,8 @@ Additional options:
 - `--output <dir>` - Custom output directory
 - `--iterations <number>` - Number of ICP iterations (default: 20)
 - `--visualize` - Enable UI visualization during fitting
+
+Note: The posterior-based fitting requires indexed point clouds, while the ICP-based fitting can be used with any point cloud.
 
 
 ### Visualize PDM
