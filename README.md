@@ -45,6 +45,7 @@ Additional options:
 - `--iterations <number>` - Number of ICP iterations (default: 20)
 - `--visualize` - Enable UI visualization during fitting
 
+
 Note: The posterior-based fitting requires indexed point clouds, while the ICP-based fitting can be used with any point cloud.
 
 

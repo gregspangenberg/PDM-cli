@@ -16,6 +16,10 @@ import scala.io.Source
 /**
  * Combined PDM fitting tool that provides both posterior-based and ICP-based fitting
  * with support for processing directories of files.
+ * 
+ * This can be compiled as a java .jar file and run from the command line. like so:
+  *   java -jar fit.jar posterior --pdm <path> --input <path> --output <dir> --visualize
+  *  java -jar fit.jar icp --pdm <path> --input <path> --output <dir> --iterations <number> --visualize
  */
 object PDMFittingTool {
   
