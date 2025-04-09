@@ -363,12 +363,20 @@ object PDMFittingTool {
       posterior.mean.pointSet
     }
     
+    def calculateError(movingShape: PointSet[_3D], correspondences: Seq[(PointId, Point[_3D])]): Double = {
+      correspondences.map { case (id, targetPoint) =>
+        val modelPoint = movingShape.point(id) // Use the transformed model point
+        (targetPoint - modelPoint).norm2
+      }.sum / correspondences.length.toDouble
+    }
+
     // Define non-rigid ICP function
     def nonrigidICP(movingShape: PointSet[_3D], ptIds: Seq[PointId], numberOfIterations: Int): PointSet[_3D] = {
       if (numberOfIterations == 0) {
         movingShape
       } else {
-        println(s"ICP iteration ${iterations - numberOfIterations + 1}/${iterations}")
+        val error = calculateError(movingShape, attributeCorrespondences(movingShape, ptIds))
+        println(s"Iteration ${iterations - numberOfIterations + 1}/${iterations}  error: $error")
         
         val correspondences = attributeCorrespondences(movingShape, ptIds)
         val transformed = fitModel(correspondences)
