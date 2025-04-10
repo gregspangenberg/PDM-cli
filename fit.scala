@@ -212,7 +212,7 @@ object PDMFittingTool {
     // Generate output file name
     val outputFileName = {
       val baseName = file.getName.replaceAll("\\.pts$", "")
-      s"${baseName}_fitted_posterior.pts"
+      s"${baseName}.pts"
     }
     
     val outputFile = new File(outputDir, outputFileName)
@@ -403,7 +403,7 @@ object PDMFittingTool {
     // Generate output file name
     val outputFileName = {
       val baseName = file.getName.replaceAll("\\.pts$", "")
-      s"${baseName}_fitted_icp.pts"
+      s"${baseName}.pts"
     }
     
     val outputFile = new File(outputDir, outputFileName)

@@ -69,3 +69,17 @@ Dependencies are managed through Scala CLI directives at the top of each file:
 //> using scala "3.3"
 //> using dep "ch.unibas.cs.gravis::scalismo-ui:0.92.0"
 ```
+
+## Compiling to Java Bytecode
+You may wish to compile the Scala fitting code to so you can run it without the need for scala and its dependencies. This is useful for deployment or distribution.
+To compile the Scala code to a JAR file, you can use the following command:
+
+```bash
+scala-cli package --power --assembly fit.scala   --main-class PDMFittingTool   --output scalismo_fit.jar
+```
+This all.
+An example of how to call the JAR file is as follows:
+
+```bash
+java -jar scalismo_fit.jar icp --pdm models/your_pdm.h5.json --input /path/to/target/data
+```
