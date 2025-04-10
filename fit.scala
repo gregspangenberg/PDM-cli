@@ -457,7 +457,7 @@ object PDMFittingTool {
         val x = parts(0).toDouble
         val y = parts(1).toDouble
         val z = parts(2).toDouble
-        val idx = parts(3).toInt
+        val idx = parts(3).toDouble.toInt
         (Point(x, y, z), idx)
       }
       
